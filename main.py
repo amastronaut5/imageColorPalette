@@ -81,7 +81,7 @@ def home():
                     if len(lst) >= 10:
                         break
 
-    return render_template(template_name_or_list='index.html',image_url=image_url,color_list=lst)
+    return render_template(template_name_or_list='template_index.html',image_url=image_url,color_list=lst)
 
 
 
