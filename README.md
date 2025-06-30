@@ -37,7 +37,7 @@ A simple web app to extract the top colors from an image and display a clean, be
 
 - HTML5
 - CSS3
-- [Bootstrap 5](https://getbootstrap.com/)
+- Python (Pandas, Numpy, sklearn)
 
 ## Screenshots
 
