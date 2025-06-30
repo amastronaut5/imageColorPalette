@@ -41,7 +41,8 @@ A simple web app to extract the top colors from an image and display a clean, be
 
 ## Screenshots
 
-> _Add screenshots of the app in action here!_
+![image](https://github.com/user-attachments/assets/a7a2bd0b-32b6-426f-9783-6d8260001602)
+
 
 ## License
 
