@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Color Palette</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-panel {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .palette-panel {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .color-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .color-swatch {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Color Palette Extractor</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if image_url %}
+    <div class="container">
+        <div class="image-panel">
+            <h3>Uploaded Image:</h3>
+            <img src="{{ image_url }}" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="palette-panel">
+            <h3>Top 10 Colors:</h3>
+            {% for color in color_list %}
+            <div class="color-box">
+                <div class="color-swatch" style="background-color: rgb{{ color.rgb }};"></div>
+                <div>
+                    <div><strong>RGB:</strong> {{ color.rgb }}</div>
+                    <div><strong>HEX:</strong> {{ color.hex }}</div>
+                    <div><strong>Count:</strong>{{ color.count }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
